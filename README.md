@@ -1,7 +1,7 @@
 
 # CDKTF prebuilt bindings for grafana/grafana provider version 3.15.3
 
-This repo builds and publishes the [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
+This repo builds and publishes the [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3/docs) bindings for [CDK for Terraform](https://cdk.tf).
 
 ## Available Packages
 
@@ -63,7 +63,7 @@ This project is explicitly not tracking the Terraform grafana provider version 1
 These are the upstream dependencies:
 
 - [CDK for Terraform](https://cdk.tf)
-- [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3.0)
+- [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.
