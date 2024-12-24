@@ -9,7 +9,7 @@ const project = new CdktfProviderProject({
   releaseEveryCommit: true,
   minNodeVersion: "18.12.0",
   jsiiVersion: "~5.5.0",
-  minMajorVersion: 2,
+  minMajorVersion: 1,
   typescriptVersion: "~5.5.0", // NOTE: this should be the same major/minor version as JSII
   name: "cdktf-provider-grafana",
   packageName: "@jorgeLuizChaves/cdktf-provider-grafana",
