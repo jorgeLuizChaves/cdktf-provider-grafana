@@ -6,6 +6,7 @@ const project = new CdktfProviderProject({
   constructsVersion: "^10.4.2",
   defaultReleaseBranch: "main",
   devDeps: ["@cdktf/provider-project"],
+  releaseEveryCommit: true,
   minNodeVersion: "18.12.0",
   jsiiVersion: "~5.5.0",
   minMajorVersion: 2,
