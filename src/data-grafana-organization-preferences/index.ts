@@ -63,7 +63,7 @@ export class DataGrafanaOrganizationPreferences extends cdktf.TerraformDataSourc
       terraformGeneratorMetadata: {
         providerName: 'grafana',
         providerVersion: '3.15.3',
-        providerVersionConstraint: '3.15.3'
+        providerVersionConstraint: '~> 3.15.2'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,

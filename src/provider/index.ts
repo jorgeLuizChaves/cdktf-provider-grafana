@@ -182,7 +182,7 @@ export class GrafanaProvider extends cdktf.TerraformProvider {
       terraformGeneratorMetadata: {
         providerName: 'grafana',
         providerVersion: '3.15.3',
-        providerVersionConstraint: '3.15.3'
+        providerVersionConstraint: '~> 3.15.2'
       },
       terraformProviderSource: 'grafana/grafana'
     });

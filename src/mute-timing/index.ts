@@ -521,7 +521,7 @@ export class MuteTiming extends cdktf.TerraformResource {
       terraformGeneratorMetadata: {
         providerName: 'grafana',
         providerVersion: '3.15.3',
-        providerVersionConstraint: '3.15.3'
+        providerVersionConstraint: '~> 3.15.2'
       },
       provider: config.provider,
       dependsOn: config.dependsOn,
