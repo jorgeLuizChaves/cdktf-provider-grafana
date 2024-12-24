@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cdktf-provider-grafana
+  description: pre built cdktf for grafana provider
+  links:
+    - url: https://dashboard.example.com
+      title: My Dashboard
+      icon: dashboard
+  tags:
+    - cdktf
+    - terraform
+    - grafana
+    - iac
+spec:
+  type: library # website, service, and library
+  lifecycle: production # production, experimental, and deprecated.
+  owner: user:jorgeLuizChaves 
