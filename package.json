@@ -1,9 +1,9 @@
 {
-  "name": "@cdktf/provider-confluent",
-  "description": "Prebuilt confluent Provider for Terraform CDK (cdktf)",
+  "name": "@jorgeLuizChaves/cdktf-provider-confluent",
+  "description": "Prebuilt grafana Provider for Terraform CDK (cdktf)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdktf/cdktf-provider-confluent.git"
+    "url": "https://github.com/cdktf/cdktf-provider-grafana.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -41,7 +41,7 @@
   },
   "author": {
     "name": "HashiCorp",
-    "email": "user@domain.com",
+    "email": "jorge.luizchaves@yahoo.com.br",
     "organization": true
   },
   "devDependencies": {
@@ -49,11 +49,11 @@
     "@action-validator/core": "^0.6.0",
     "@actions/core": "^1.1.0",
     "@cdktf/provider-project": "^0.6.24",
-    "@types/node": "^22.10.2",
+    "@types/node": "^18",
     "cdktf": "0.20.9",
     "cdktf-cli": "0.20.9",
     "commit-and-tag-version": "^12",
-    "constructs": "10.3.0",
+    "constructs": "^10.4.2",
     "dot-prop": "^5.2.0",
     "jsii": "~5.5.0",
     "jsii-diff": "^1.106.0",
@@ -63,11 +63,11 @@
     "projen": "^0.91.4",
     "semver": "^7.5.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "~5.5.0"
   },
   "peerDependencies": {
     "cdktf": "0.20.9",
-    "constructs": "10.3.0"
+    "constructs": "^10.4.2"
   },
   "resolutions": {
     "@types/yargs": "17.0.13"
@@ -75,10 +75,13 @@
   "keywords": [
     "cdk",
     "cdktf",
-    "confluent",
+    "grafana",
     "provider",
     "terraform"
   ],
+  "engines": {
+    "node": ">= 18.12.0"
+  },
   "main": "lib/index.js",
   "license": "MPL-2.0",
   "publishConfig": {
@@ -91,23 +94,23 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.hashicorp.cdktf.providers.confluent",
+        "package": "com.hashicorp.cdktf.providers.grafana",
         "maven": {
           "groupId": "com.hashicorp",
-          "artifactId": "cdktf-provider-confluent"
+          "artifactId": "cdktf-provider-grafana"
         }
       },
       "python": {
-        "distName": "cdktf-cdktf-provider-confluent",
-        "module": "cdktf_cdktf_provider_confluent"
+        "distName": "cdktf-cdktf-provider-grafana",
+        "module": "cdktf_cdktf_provider_grafana"
       },
       "dotnet": {
-        "namespace": "HashiCorp.Cdktf.Providers.Confluent",
-        "packageId": "HashiCorp.Cdktf.Providers.Confluent"
+        "namespace": "HashiCorp.Cdktf.Providers.Grafana",
+        "packageId": "HashiCorp.Cdktf.Providers.Grafana"
       },
       "go": {
-        "moduleName": "github.com/cdktf/cdktf-provider-confluent-go",
-        "packageName": "confluent"
+        "moduleName": "github.com/cdktf/cdktf-provider-grafana-go",
+        "packageName": "grafana"
       }
     },
     "tsc": {

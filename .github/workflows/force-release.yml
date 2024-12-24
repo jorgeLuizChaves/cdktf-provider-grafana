@@ -33,7 +33,8 @@ jobs:
           git config user.email "github-actions@github.com"
       - name: Setup Node.js
         uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
-        with: {}
+        with:
+          node-version: 18.12.0
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: build
@@ -58,7 +59,8 @@ jobs:
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
-        with: {}
+        with:
+          node-version: 18.12.0
       - name: Setup Go
         uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32
         with:
@@ -97,7 +99,7 @@ jobs:
           sed -i -e '/## Available Packages/,/### Go/!b' -e '/### Go/!d;p; s/### Go/## Go Package/' -e 'd' .repo/dist/go/*/README.md
           sed -i 's/### Go/## Go Package/' .repo/dist/go/*/README.md
           sed -i -e '/API.typescript.md/,/You can also visit a hosted version/!b' -e 'd' .repo/dist/go/*/README.md
-          sed -i 's|Find auto-generated docs for this provider here:|Find auto-generated docs for this provider [here](https://github.com/cdktf/cdktf-provider-confluent/blob/main/docs/API.go.md).|' .repo/dist/go/*/README.md
+          sed -i 's|Find auto-generated docs for this provider here:|Find auto-generated docs for this provider [here](https://github.com/cdktf/cdktf-provider-grafana/blob/main/docs/API.go.md).|' .repo/dist/go/*/README.md
           sed -i -e '/### Provider Version/,/The provider version can be adjusted/!b' -e 'd' .repo/dist/go/*/README.md
       - name: Copy the README file to the parent directory
         run: cp .repo/dist/go/*/README.md .repo/dist/go/README.md

@@ -19,6 +19,7 @@
     },
     {
       "name": "@types/node",
+      "version": "^18",
       "type": "build"
     },
     {
@@ -38,7 +39,7 @@
     },
     {
       "name": "constructs",
-      "version": "10.3.0",
+      "version": "^10.4.2",
       "type": "build"
     },
     {
@@ -84,6 +85,7 @@
     },
     {
       "name": "typescript",
+      "version": "~5.5.0",
       "type": "build"
     },
     {
@@ -98,7 +100,7 @@
     },
     {
       "name": "constructs",
-      "version": "10.3.0",
+      "version": "^10.4.2",
       "type": "peer"
     }
   ],

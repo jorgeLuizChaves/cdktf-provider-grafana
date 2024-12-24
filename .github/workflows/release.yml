@@ -30,6 +30,10 @@ jobs:
         run: |-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+      - name: Setup Node.js
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
+        with:
+          node-version: 18.12.0
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -68,7 +72,8 @@ jobs:
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - name: Setup Node.js
         uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
-        with: {}
+        with:
+          node-version: 18.12.0
       - name: Install
         run: yarn install
       - name: Check deprecation status
@@ -80,11 +85,11 @@ jobs:
       - name: Deprecate the package on NPM
         if: steps.check_status.outputs.is_deprecated == 'true' || steps.check_status.outputs.is_deprecated == true
         env:
-          NPM_REGISTRY: registry.npmjs.org
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_REGISTRY: npm.pkg.github.com
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |-
           npm set "//$NPM_REGISTRY/:_authToken=$NPM_TOKEN"
-          npm deprecate @cdktf/provider-confluent "See https://cdk.tf/imports for details on how to continue to use the confluent provider in your CDK for Terraform (CDKTF) projects by generating the bindings locally."
+          npm deprecate @cdktf/provider-grafana "See https://cdk.tf/imports for details on how to continue to use the grafana provider in your CDK for Terraform (CDKTF) projects by generating the bindings locally."
   release_github:
     name: Publish to GitHub Releases
     needs: release
@@ -96,7 +101,7 @@ jobs:
     steps:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - name: Download build artifacts
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
         with:
@@ -130,12 +135,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      packages: write
       issues: write
     if: needs.release.outputs.tag_exists != 'true' && needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - name: Download build artifacts
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
         with:
@@ -161,8 +167,8 @@ jobs:
       - name: Release
         env:
           NPM_DIST_TAG: latest
-          NPM_REGISTRY: registry.npmjs.org
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_REGISTRY: npm.pkg.github.com
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx -p publib@latest publib-npm
       - name: Extract Version
         id: extract-version
@@ -192,7 +198,7 @@ jobs:
           java-version: "11"
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - name: Download build artifacts
         uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
         with:
@@ -249,7 +255,7 @@ jobs:
     steps:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - uses: actions/setup-python@39cd14951b08e74b54015e9e001cdefcf80e669f
         with:
           python-version: 3.x
@@ -304,7 +310,7 @@ jobs:
     steps:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - uses: actions/setup-dotnet@6bd8b7f7774af54e05809fcc5431931b3eb1ddee
         with:
           dotnet-version: 6.x
@@ -358,7 +364,7 @@ jobs:
     steps:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
-          node-version: lts/*
+          node-version: 18.12.0
       - uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32
         with:
           go-version: ^1.18.0
@@ -396,7 +402,7 @@ jobs:
           sed -i -e '/## Available Packages/,/### Go/!b' -e '/### Go/!d;p; s/### Go/## Go Package/' -e 'd' .repo/dist/go/*/README.md
           sed -i 's/### Go/## Go Package/' .repo/dist/go/*/README.md
           sed -i -e '/API.typescript.md/,/You can also visit a hosted version/!b' -e 'd' .repo/dist/go/*/README.md
-          sed -i 's|Find auto-generated docs for this provider here:|Find auto-generated docs for this provider [here](https://github.com/cdktf/cdktf-provider-confluent/blob/main/docs/API.go.md).|' .repo/dist/go/*/README.md
+          sed -i 's|Find auto-generated docs for this provider here:|Find auto-generated docs for this provider [here](https://github.com/cdktf/cdktf-provider-grafana/blob/main/docs/API.go.md).|' .repo/dist/go/*/README.md
           sed -i -e '/### Provider Version/,/The provider version can be adjusted/!b' -e 'd' .repo/dist/go/*/README.md
       - name: Copy the README file to the parent directory
         run: cp .repo/dist/go/*/README.md .repo/dist/go/README.md

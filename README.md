@@ -1,48 +1,48 @@
 
-# CDKTF prebuilt bindings for confluentinc/confluent provider version 2.11.0
+# CDKTF prebuilt bindings for grafana/grafana provider version 3.15.3
 
-This repo builds and publishes the [Terraform confluent provider](https://registry.terraform.io/providers/confluentinc/confluent/2.11.0.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
+This repo builds and publishes the [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
 
 ## Available Packages
 
 ### NPM
 
-The npm package is available at [https://www.npmjs.com/package/@cdktf/provider-confluent](https://www.npmjs.com/package/@cdktf/provider-confluent).
+The npm package is available at [https://www.npmjs.com/package/@cdktf/provider-grafana](https://www.npmjs.com/package/@cdktf/provider-grafana).
 
-`npm install @cdktf/provider-confluent`
+`npm install @cdktf/provider-grafana`
 
 ### PyPI
 
-The PyPI package is available at [https://pypi.org/project/cdktf-cdktf-provider-confluent](https://pypi.org/project/cdktf-cdktf-provider-confluent).
+The PyPI package is available at [https://pypi.org/project/cdktf-cdktf-provider-grafana](https://pypi.org/project/cdktf-cdktf-provider-grafana).
 
-`pipenv install cdktf-cdktf-provider-confluent`
+`pipenv install cdktf-cdktf-provider-grafana`
 
 ### Nuget
 
-The Nuget package is available at [https://www.nuget.org/packages/HashiCorp.Cdktf.Providers.Confluent](https://www.nuget.org/packages/HashiCorp.Cdktf.Providers.Confluent).
+The Nuget package is available at [https://www.nuget.org/packages/HashiCorp.Cdktf.Providers.Grafana](https://www.nuget.org/packages/HashiCorp.Cdktf.Providers.Grafana).
 
-`dotnet add package HashiCorp.Cdktf.Providers.Confluent`
+`dotnet add package HashiCorp.Cdktf.Providers.Grafana`
 
 ### Maven
 
-The Maven package is available at [https://mvnrepository.com/artifact/com.hashicorp/cdktf-provider-confluent](https://mvnrepository.com/artifact/com.hashicorp/cdktf-provider-confluent).
+The Maven package is available at [https://mvnrepository.com/artifact/com.hashicorp/cdktf-provider-grafana](https://mvnrepository.com/artifact/com.hashicorp/cdktf-provider-grafana).
 
 ```
 <dependency>
     <groupId>com.hashicorp</groupId>
-    <artifactId>cdktf-provider-confluent</artifactId>
+    <artifactId>cdktf-provider-grafana</artifactId>
     <version>[REPLACE WITH DESIRED VERSION]</version>
 </dependency>
 ```
 
 ### Go
 
-The go package is generated into the [`github.com/cdktf/cdktf-provider-confluent-go`](https://github.com/cdktf/cdktf-provider-confluent-go) package.
+The go package is generated into the [`github.com/cdktf/cdktf-provider-grafana-go`](https://github.com/cdktf/cdktf-provider-grafana-go) package.
 
-`go get github.com/cdktf/cdktf-provider-confluent-go/confluent/<version>`
+`go get github.com/cdktf/cdktf-provider-grafana-go/grafana/<version>`
 
 Where `<version>` is the version of the prebuilt provider you would like to use e.g. `v11`. The full module name can be found
-within the [go.mod](https://github.com/cdktf/cdktf-provider-confluent-go/blob/main/confluent/go.mod#L1) file.
+within the [go.mod](https://github.com/cdktf/cdktf-provider-grafana-go/blob/main/grafana/go.mod#L1) file.
 
 ## Docs
 
@@ -54,16 +54,16 @@ Find auto-generated docs for this provider here:
 - [C#](./docs/API.csharp.md)
 - [Go](./docs/API.go.md)
 
-You can also visit a hosted version of the documentation on [constructs.dev](https://constructs.dev/packages/@cdktf/provider-confluent).
+You can also visit a hosted version of the documentation on [constructs.dev](https://constructs.dev/packages/@cdktf/provider-grafana).
 
 ## Versioning
 
-This project is explicitly not tracking the Terraform confluent provider version 1:1. In fact, it always tracks `latest` of `2.11.0` with every release. If there are scenarios where you explicitly have to pin your provider version, you can do so by [generating the provider constructs manually](https://cdk.tf/imports).
+This project is explicitly not tracking the Terraform grafana provider version 1:1. In fact, it always tracks `latest` of `3.15.3` with every release. If there are scenarios where you explicitly have to pin your provider version, you can do so by [generating the provider constructs manually](https://cdk.tf/imports).
 
 These are the upstream dependencies:
 
 - [CDK for Terraform](https://cdk.tf)
-- [Terraform confluent provider](https://registry.terraform.io/providers/confluentinc/confluent/2.11.0.0)
+- [Terraform grafana provider](https://registry.terraform.io/providers/grafana/grafana/3.15.3.0)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.
