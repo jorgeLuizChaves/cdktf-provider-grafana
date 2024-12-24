@@ -1,5 +1,5 @@
 {
-  "name": "@jorgeLuizChaves/cdktf-provider-grafana2",
+  "name": "@jorgeLuizChaves/cdktf-provider-grafana",
   "description": "Prebuilt grafana Provider for Terraform CDK (cdktf)",
   "repository": {
     "type": "git",
