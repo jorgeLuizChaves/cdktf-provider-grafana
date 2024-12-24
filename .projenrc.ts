@@ -13,7 +13,7 @@ const project = new CdktfProviderProject({
   packageName: "@jorgeLuizChaves/cdktf-provider-grafana",
   projenrcTs: true,
   repositoryUrl: "https://github.com/jorgeLuizChaves/cdktf-provider-grafana.git",
-  terraformProvider: "grafana/grafana@3.15.3",
+  terraformProvider: "grafana/grafana@3.15.2",
   isDeprecated: false,
   npmRegistryUrl: "https://npm.pkg.github.com", // NOTE: switch to gh npm registry
   releaseToNpm: true,
