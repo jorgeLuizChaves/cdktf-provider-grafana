@@ -20,7 +20,9 @@ const project = new CdktfProviderProject({
   npmRegistryUrl: "https://npm.pkg.github.com", // NOTE: switch to gh npm registry
   releaseToNpm: true,
   package: true,
-
+  gitignore: [
+      '.idea/'
+  ]
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
   // packageName: undefined,  /* The "name" in package.json. */
