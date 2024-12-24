@@ -10,7 +10,7 @@ const project = new CdktfProviderProject({
   jsiiVersion: "~5.5.0",
   typescriptVersion: "~5.5.0", // NOTE: this should be the same major/minor version as JSII
   name: "cdktf-provider-grafana",
-  packageName: "@jorgeLuizChaves/cdktf-provider-confluent",
+  packageName: "@jorgeLuizChaves/cdktf-provider-grafana",
   projenrcTs: true,
   repositoryUrl: "https://github.com/jorgeLuizChaves/cdktf-provider-grafana.git",
   terraformProvider: "grafana/grafana@3.15.3",
